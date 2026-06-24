@@ -9,7 +9,7 @@ const catalogueInitial = [
     origine: "Ogooué-Ivindo",
     prix: "5 000 FCFA",
     stock: 40,
-    image: "../images/6.png",
+    image: "../images/6.jpeg",
   },
   {
     id: 2,
