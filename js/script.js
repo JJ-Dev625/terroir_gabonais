@@ -9,7 +9,7 @@ const catalogueInitial = [
     origine: "Ogooué-Ivindo",
     prix: "5 000 FCFA",
     stock: 40,
-    image: "../images/6.jpg",
+    image: "../images/6.png",
   },
   {
     id: 2,
@@ -18,7 +18,7 @@ const catalogueInitial = [
     origine: "Woleu-Ntem",
     prix: "4 500 FCFA",
     stock: 65,
-    image: "../images/4.jpg",
+    image: "../images/4.png",
   },
   {
     id: 3,
@@ -27,7 +27,7 @@ const catalogueInitial = [
     origine: "Ogooué-Lolo",
     prix: "6 000 FCFA",
     stock: 22,
-    image: "../images/3.jpg",
+    image: "../images/3.png",
   },
   {
     id: 4,
@@ -36,7 +36,7 @@ const catalogueInitial = [
     origine: "Moyen-Ogooué",
     prix: "7 500 FCFA",
     stock: 15,
-    image: "../images/2.jpg",
+    image: "../images/2.png",
   },
   {
     id: 5,
@@ -45,7 +45,7 @@ const catalogueInitial = [
     origine: "Nyanga",
     prix: "8 000 FCFA",
     stock: 18,
-    image: "../images/2.jpg",
+    image: "../images/2.png",
   },
   {
     id: 6,
@@ -54,7 +54,7 @@ const catalogueInitial = [
     origine: "Woleu-Ntem",
     prix: "7 000 FCFA",
     stock: 50,
-    image: "../images/m.jpg",
+    image: "../images/m.png",
   },
   {
     id: 7,
@@ -63,7 +63,7 @@ const catalogueInitial = [
     origine: "Ngounié",
     prix: "8 500 FCFA",
     stock: 12,
-    image: "../images/1.jpg",
+    image: "../images/1.png",
   },
   {
     id: 8,
@@ -72,7 +72,7 @@ const catalogueInitial = [
     origine: "Haut-Ogooué",
     prix: "6 500 FCFA",
     stock: 30,
-    image: "../images/5.jpg",
+    image: "../images/5.png",
   },
   {
     id: 9,
@@ -81,7 +81,7 @@ const catalogueInitial = [
     origine: "Estuaire",
     prix: "12 000 FCFA",
     stock: 8,
-    image: "../images/1.jpg",
+    image: "../images/1.png",
   },
   {
     id: 10,
@@ -90,7 +90,7 @@ const catalogueInitial = [
     origine: "Ogooué-Maritime",
     prix: "14 000 FCFA",
     stock: 5,
-    image: "../images/m.jpg",
+    image: "../images/m.png",
   },
 ];
 
@@ -99,13 +99,13 @@ const fichesRecettes = [
     id: "r1",
     titre: "Mijoté de Chenilles à l'Odika",
     prix: "1 500 FCFA",
-    image: "../images/p3.jpg",
+    image: "../images/p3.png",
   },
   {
     id: "r2",
     titre: "Brochettes de Vers de Palmier au Miel",
     prix: "2 000 FCFA",
-    image: "../images/p2.jpg",
+    image: "../images/p2.png",
   },
 ];
 
