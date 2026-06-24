@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nyoni - Terroir Gabonais</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container header-flex">
+            <div class="logo">
+                <a href="index.html"><strong>Nyoni 🇬🇦</strong></a>
+            </div>
+
+            <div class="header-actions">
+                <nav class="nav-bar" id="nav-links">
+                    <a href="index.html" class="active">Accueil</a>
+                    <a href="#a-propos">À Propos</a>
+                    <a href="#produits">Produits</a>
+                    <a href="#recettes">Recettes</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+
+                <a href="paiement.html" class="cart-icon-btn">
+                    🛒 Panier (<span id="cart-count">0</span>)
+                </a>
+
+                <button class="burger-menu" onclick="toggleMenu()">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="search-section">
+        <div class="container search-flex">
+            <input type="text" id="search-input" placeholder="Rechercher un produit ou une province..." oninput="filtrerProduits()">
+            <select id="filter-select" onchange="filtrerProduits()">
+                <option value="tous">Tous les produits</option>
+                <option value="miel">Miels Sauvages</option>
+                <option value="moucheron">Miels de Moucherons</option>
+                <option value="chenille">Chenilles Comestibles</option>
+                <option value="ver">Vers de Palmier</option>
+            </select>
+        </div>
+    </div>
+
+    <main>
+        <section class="hero-welcome hero-slider">
+            <div class="hero-content">
+                <span class="badge">🛡️ Label Traçabilité</span>
+                <h1>L'Excellence de la Forêt Gabonaise</h1>
+                <p>Une plateforme simple pour valoriser les produits de nos cueilleurs et artisans locaux.</p>
+                <div style="margin-top: 25px;">
+                    <a href="fournisseur.html" class="nav-supplier-btn-hero">
+                        <i class="fas fa-user-cog"></i> Gérer mes stocks (Distributeur)
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="a-propos" class="section container">
+            <h2 class="section-title">À Propos de Nous</h2>
+            <div class="about-box">
+                <p><strong>Nyoni</strong> permet de répertorier et de distribuer les produits forestiers non ligneux du Gabon. Notre objectif est de connecter directement les récolteurs de nos provinces avec les clients, en garantissant l'origine locale du produit.</p>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="promo-card">
+                <h3>💡 Consommer Local</h3>
+                <p>Chaque achat soutient directement l'économie de nos provinces et les communautés rurales.</p>
+            </div>
+        </div>
+
+        <section id="produits" class="section container">
+            <h2 class="section-title">Nos Produits Disponibles</h2>
+            <div class="grid" id="product-grid"></div>
+        </section>
+
+        <section id="recettes" class="section container" style="border-top: 1px solid #eee;">
+            <h2 class="section-title">Fiches Recettes Digitales 🍳</h2>
+            <div class="grid" id="recipe-grid"></div>
+        </section>
+    </main>
+
+    <section id="contact">
+        <footer class="main-footer">
+            <div class="container footer-grid">
+                <div>
+                    <h4 class="footer-title">À propos de Nyoni</h4>
+                    <p>Valorisation numérique des produits du terroir gabonais. Traçabilité et qualité forêt-consommateur.</p>
+                </div>
+                <div>
+                    <h4 class="footer-title">Suivez-nous</h4>
+                    <div class="footer-icons">
+                        <a href="https://facebook.com/nyoni241" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="mailto:contact@nyoni.ga" title="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="tel:+24107000000" title="Téléphone"><i class="fas fa-phone"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer-title">Certifications</h4>
+                    <p>✓ Produit 100% Gabonais</p>
+                    <p>✓ Cueillette Éco-responsable</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Nyoni Platform - Tous droits réservés.
+            </div>
+        </footer>
+    </section>
+    
+    <button id="scroll-top-btn" onclick="remonterEnHaut()">↑ En haut</button>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>

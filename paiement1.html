@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nyoni - Finaliser ma Commande</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container header-flex">
+            <div class="logo">
+                <a href="index.html">Nyoni 🇬🇦</a>
+            </div>
+            <div class="header-actions">
+                <a href="index.html" class="btn btn-secondary" style="background-color: #0f5132; color: #fff;"><i class="fas fa-arrow-left"></i> Boutique</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container section">
+        <div style="max-width: 650px; margin: 0 auto; background: white; padding: 30px; border-radius: 12px; border: 1px solid #eee; margin-bottom: 40px;">
+            <h2 style="color: #0f5132; margin-bottom: 10px;"><i class="fas fa-shopping-bag"></i> Finaliser l'achat</h2>
+            <p style="font-size: 0.9rem; color: #666; margin-bottom: 20px;">Vos transactions sont cryptées et sécurisées.</p>
+
+            <form id="payment-form">
+                <div class="form-group">
+                    <label>Nom complet du destinataire *</label>
+                    <input type="text" id="client-name" required placeholder="Ex: Jean Junior">
+                </div>
+
+                <div class="form-group">
+                    <label>Adresse de livraison / Ville ou Pays *</label>
+                    <input type="text" id="client-address" required placeholder="Ex: Bikélé, Libreville ou Paris, FR">
+                </div>
+
+                <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                    <div class="form-group">
+                        <label>Numéro de téléphone *</label>
+                        <input type="tel" id="client-tel" required placeholder="Ex: +241 077 00 00 00">
+                    </div>
+                    <div class="form-group">
+                        <label>Adresse e-mail (Suivi colis) *</label>
+                        <input type="email" id="client-email" required placeholder="Ex: client@gmail.com">
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-top: 15px;">
+                    <label style="font-weight: bold; color: #0f5132;">Destination & Mode de livraison *</label>
+                    <select id="mode-livraison" required style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc; margin-top: 5px;">
+                        <option value="" disabled selected>-- Choisissez votre zone --</option>
+                        <option value="local">🚗 Grand Libreville (Bikélé, Akanda, Owendo) — 2 000 F</option>
+                        <option value="province">🚌 Bus Expédition Provinces (via Agence de transport) — 5 000 F</option>
+                        <option value="international">✈️ Exportation Internationale (Fret aérien / DHL) — 25 000 F</option>
+                    </select>
+                </div>
+
+                <div id="phytosanitary-alert" style="display: none; background: #fff3cd; color: #856404; padding: 12px; border-radius: 6px; font-size: 0.85rem; margin-top: 10px;">
+                    <i class="fas fa-exclamation-triangle"></i> <strong>Note d'exportation :</strong> Pour l'envoi de produits sauvages ou de cueillette à l'international, Nyoni s'occupe de l'obtention des certificats phytosanitaires obligatoires.
+                </div>
+
+                <h3 style="font-size: 1.1rem; margin-top: 25px; color: #1a1a1a;">Sélectionnez votre mode de paiement</h3>
+                <div style="margin: 15px 0; display: flex; flex-direction: column; gap: 12px;">
+                    
+                    <label style="display: flex; align-items: center; gap: 15px; padding: 12px; background: #f9f9f9; border-radius: 8px; border: 1px solid #e0e0e0; cursor: pointer;">
+                        <input type="radio" name="payment-method" value="airtel" checked style="transform: scale(1.2);">
+                        <img src="./images/am.jpg" alt="Logo Airtel Money" width="45" height="30" style="object-fit: contain; border-radius: 4px;">
+                        <span><strong style="color: #ff0000;">Airtel Money</strong> Mobile Banking</span>
+                    </label>
+
+                    <label style="display: flex; align-items: center; gap: 15px; padding: 12px; background: #f9f9f9; border-radius: 8px; border: 1px solid #e0e0e0; cursor: pointer;">
+                        <input type="radio" name="payment-method" value="moov" style="transform: scale(1.2);">
+                        <img src="./images/mm.jpg" alt="Logo Moov Money" width="45" height="30" style="object-fit: contain; border-radius: 4px;">
+                        <span><strong style="color: #0056b3;">Moov Money</strong> Flooz Wallet</span>
+                    </label>
+
+                    <label style="display: flex; align-items: center; gap: 15px; padding: 12px; background: #f9f9f9; border-radius: 8px; border: 1px solid #e0e0e0; cursor: pointer;">
+                        <input type="radio" name="payment-method" value="card" style="transform: scale(1.2);">
+                        <div style="width: 45px; height: 30px; background-color: #333; color: white; display: flex; align-items: center; justify-content: center; border-radius: 4px; font-size: 1rem;">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <span><strong>Carte Bancaire</strong> (Visa / Mastercard)</span>
+                    </label>
+                </div>
+
+                <div class="resume-panier" style="background: #ebf0ed; padding: 20px; border-radius: 8px; margin-top: 20px;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                        <span>Sous-total articles :</span>
+                        <strong>7 000 FCFA</strong>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                        <span>Frais d'expédition :</span>
+                        <strong id="frais-livraison">0 FCFA</strong>
+                    </div>
+                    <hr style="border: 0; border-top: 1px solid #ccc; margin: 10px 0;">
+                    <div style="display: flex; justify-content: space-between; font-size: 1.2rem; color: #0f5132;">
+                        <span>Total général :</span>
+                        <strong id="total-commande">7 000 FCFA</strong>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 20px; padding: 12px; background-color: #ffb703; color: #000; font-weight: bold; border: none; border-radius: 6px; cursor: pointer;">
+                    <i class="fas fa-check-circle"></i> Confirmer et Payer
+                </button>
+            </form>
+        </div>
+    </main>
+
+    <footer id="contact" class="main-footer">
+        <div class="container footer-grid">
+            <div>
+                <h4 class="footer-title">À propos de Nyoni</h4>
+                <p>Valorisation numérique des produits du terroir gabonais. Traçabilité et quality forêt-consommateur.</p>
+            </div>
+            <div>
+                <h4 class="footer-title">Suivez-nous</h4>
+                <div class="footer-icons">
+                    <a href="https://facebook.com/nyoni241" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="mailto:contact@nyoni.ga" title="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="tel:+24107000000" title="Téléphone"><i class="fas fa-phone"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="footer-title">Certifications</h4>
+                <p>✓ Produit 100% Gabonais</p>
+                <p>✓ Cueillette Éco-responsable</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Nyoni Platform - Tous droits réservés.
+        </div>
+    </footer>
+
+    <script src="./js/paiement1.js"></script>
+</body>
+</html>
