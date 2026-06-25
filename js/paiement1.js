@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
       ).value;
 
       alert(
-        `Merci ${nom} ! Votre commande Nyoni a été validée via ${mode.toUpperCase()}. Le suivi de livraison vous a été envoyé.`,
+        Merci ${nom} ! Votre commande Nyoni a été validée via ${mode.toUpperCase()}. Le suivi de livraison vous a été envoyé.,
       );
     });
   }

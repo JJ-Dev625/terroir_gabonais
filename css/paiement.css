@@ -1,0 +1,374 @@
+/* ==========================================================================
+   1. BASE ET PARAMÉTRAGE GLOBAL
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #fdfbf7;
+    color: #212529;
+    line-height: 1.5;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   2. HEADER ET NAVIGATION DISCRÈTE
+   ========================================================================== */
+.main-header {
+    background-color: #ffffff;
+    padding: 15px 0;
+    border-bottom: 2px solid #0f5132;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    text-decoration: none;
+    color: #0f5132;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-admin-link {
+    color: #a0aab2;
+    font-size: 1.1rem;
+    padding: 5px 10px;
+    transition: color 0.2s ease;
+}
+
+.nav-admin-link:hover {
+    color: #495057;
+}
+
+/* Bouton universel */
+.btn {
+    display: inline-block;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: background 0.2s;
+}
+
+.btn-secondary {
+    background-color: #0f5132;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #0a3622;
+}
+
+/* ==========================================================================
+   3. BLOC CENTRAL DU FORMULAIRE DE PAIEMENT
+   ========================================================================== */
+.payment-layout {
+    padding: 40px 0;
+}
+
+.form-container {
+    max-width: 680px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 12px;
+    border: 1px solid #eef2f0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.form-title {
+    color: #0f5132;
+    margin-bottom: 5px;
+    font-size: 1.7rem;
+}
+
+.form-subtitle {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 25px;
+}
+
+/* Groupes de champs */
+.form-group {
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.form-group input, 
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #fff;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #0f5132;
+}
+
+/* Ligne multi-champs fluide */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+/* Alerte phytosanitaire */
+#phytosanitary-alert {
+    display: none;
+    background: #fff3cd;
+    color: #856404;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    margin-top: 15px;
+    border-left: 4px solid #ffc107;
+}
+
+/* ==========================================================================
+   4. SELECTION DES METHODES DE PAIEMENT
+   ========================================================================== */
+.payment-methods-title {
+    font-size: 1.15rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #1a1a1a;
+}
+
+.payment-methods-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.payment-method-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 14px;
+    background: #fdfdfd;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.payment-method-item:hover {
+    background: #f8faf9;
+    border-color: #0f5132;
+}
+
+.payment-method-item input[type="radio"] {
+    transform: scale(1.2);
+    accent-color: #0f5132;
+}
+
+.payment-method-item img {
+    width: 50px;
+    height: 32px;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.card-icon-placeholder {
+    width: 50px;
+    height: 32px;
+    background-color: #333;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    font-size: 1.1rem;
+}
+
+/* ==========================================================================
+   5. RECAPITULATIF DU PANIER
+   ========================================================================== */
+.resume-panier {
+    background: #ebf0ed;
+    padding: 22px;
+    border-radius: 10px;
+    margin-top: 25px;
+}
+
+.resume-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+.resume-divider {
+    border: 0;
+    border-top: 1px solid #bdcbd2;
+    margin: 12px 0;
+}
+
+.total-row {
+    font-size: 1.25rem;
+    color: #0f5132;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.btn-submit {
+    width: 100%;
+    margin-top: 25px;
+    padding: 14px;
+    background-color: #ffb703;
+    color: #000000;
+    font-weight: bold;
+    font-size: 1.05rem;
+    border-radius: 8px;
+}
+
+.btn-submit:hover {
+    background-color: #e5a402;
+}
+
+/* ==========================================================================
+   6. ZONE DE PIED DE PAGE (FOOTER)
+   ========================================================================== */
+.main-footer {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 50px 0 20px 0;
+    margin-top: 60px;
+    border-top: 5px solid #ffb703;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.footer-title {
+    color: #ffb703;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.main-footer p {
+    font-size: 0.95rem;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+.footer-admin-link {
+    color: #888888;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.footer-admin-link:hover {
+    color: #ffffff;
+}
+
+.footer-icons {
+    display: flex;
+    gap: 20px;
+    font-size: 1.6rem;
+    margin-top: 15px;
+}
+
+.footer-icons a {
+    color: white;
+    text-decoration: none;
+    transition: transform 0.2s, color 0.2s;
+}
+
+.footer-icons a:hover {
+    color: #ffb703;
+    transform: scale(1.15);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    font-size: 0.85rem;
+    color: #888;
+}
+
+/* ==========================================================================
+   7. ADAPTATION DESIGN RESPONSIVE (MEDIA QUERIES)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 20px;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr; /* Passage sur une colonne unique pour mobile */
+        gap: 0;
+    }
+    
+    .form-title {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .payment-layout {
+        padding: 20px 0;
+    }
+    
+    .payment-method-item {
+        font-size: 0.9rem;
+        gap: 10px;
+        padding: 12px;
+    }
+    
+    .payment-method-item img,
+    .card-icon-placeholder {
+        width: 42px;
+        height: 28px;
+    }
+}
